@@ -331,213 +331,17 @@
         <p class="text-sm sm:text-base font-semibold text-bruma-green mt-2 max-w-lg mx-auto">
           Pide por unidad o aprovecha la <span class="bg-amber-300 text-stone-900 px-2 py-0.5 rounded font-black">Promo Dúo X2</span> oficial en nuestras 3 recetas de autor
         </p>
+
+        <!-- Indicador de Inventario en Tiempo Real -->
+        <div class="mt-4 inline-flex items-center gap-2 bg-[#1F330C]/10 border border-[#1F330C]/20 px-4 py-1.5 rounded-full text-xs font-bold text-[#1F330C]">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Stock disponible del lote: <strong id="totalStockCounter" class="text-amber-700 font-black">65 galletas horneadas</strong></span>
+        </div>
       </div>
 
-      <!-- Grid de las 3 Galletas -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-        <!-- ============================================== -->
-        <!-- 1. CHOWEED (CHIPS DE CHOCOLATE)                -->
-        <!-- ============================================== -->
-        <article class="relative bg-white rounded-3xl border-4 border-bruma-greenDark shadow-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_30px_rgba(31,51,12,0.25)]">
-          <div class="giant-b-backdrop text-bruma-greenDark">B</div>
-
-          <div>
-            <!-- Header Card Tags -->
-            <div class="relative z-10 flex justify-between items-center px-4 pt-4">
-              <span class="bg-bruma-greenDark text-bruma-cream text-xs font-black uppercase px-3 py-1 rounded-full shadow">
-                Línea 1 • Clásica
-              </span>
-              <span class="bg-bruma-gold text-stone-950 text-xs font-black uppercase px-3 py-1 rounded-full shadow-md flex items-center gap-1">
-                <svg class="w-3.5 h-3.5 text-stone-950" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.316.492-.59 1.05-.845 1.62-.51 1.139-.904 2.37-1.19 3.513a.998.998 0 01-.734.733c-.783.196-1.554.492-2.308.882a1 1 0 00-.503 1.144c.433 1.62 1.488 2.87 2.822 3.65.263.153.535.291.815.412a1 1 0 01.597.943c-.017.55.076 1.11.282 1.637.28.718.742 1.34 1.334 1.802a1 1 0 001.57-.45 8.904 8.904 0 00.32-1.748c.046-.576.22-1.13.513-1.62a1 1 0 01.9-.49c.813.06 1.626-.063 2.383-.37a1 1 0 00.612-.876c-.035-1.542-.71-2.997-1.874-4.004-.377-.327-.8-.604-1.258-.821a1 1 0 01-.58-.962c.047-.796.26-1.58.633-2.296.257-.492.592-.937.994-1.317a1 1 0 00-.188-1.589z" clip-rule="evenodd"/></svg>
-                <span>2 x $30K</span>
-              </span>
-            </div>
-
-            <!-- Foto Galleta -->
-            <div class="relative z-10 p-4">
-              <div class="aspect-square w-full rounded-2xl overflow-hidden border-2 border-bruma-greenDark/20 shadow-inner bg-stone-900 group">
-                <img src="assets/cookies/chocoweed.jpg" 
-                     alt="ChocoWeed — Galleta artesanal chips de chocolate" 
-                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                     loading="lazy"
-                     onerror="this.src='https://i.postimg.cc/wT9GYs91/Gemini-Generated-Image-dhqvuodhqvuodhqv.jpg'">
-              </div>
-            </div>
-
-            <!-- Información -->
-            <div class="relative z-10 px-5 pb-4">
-              <h3 class="font-display text-2xl font-black text-bruma-greenDark uppercase leading-tight">
-                ChocoWeed
-              </h3>
-              <p class="text-xs font-bold text-bruma-green uppercase tracking-wider mb-2">
-                Chips de Chocolate Semi-Amargo
-              </p>
-              <p class="text-xs sm:text-sm text-stone-700 font-medium leading-relaxed">
-                La especialidad clásica de la casa. Masa dorada horneada con mantequilla pura de campo y abundantes trozos de chocolate oscuro fundido.
-              </p>
-            </div>
-          </div>
-
-          <!-- Bloque Precios & Acciones -->
-          <div class="relative z-10 bg-[#FFF7E3] border-t-2 border-bruma-greenDark/20 p-5 space-y-3">
-            <div class="flex justify-between items-center">
-              <div>
-                <span class="text-[11px] font-bold uppercase text-stone-500 block">1 Unidad</span>
-                <span class="text-xl font-black text-bruma-greenDark">$18.000</span>
-              </div>
-              <div class="text-right bg-bruma-greenDark text-bruma-cream px-3 py-1.5 rounded-xl shadow-sm">
-                <span class="text-[10px] font-bold uppercase block text-bruma-gold">Promo Dúo</span>
-                <span class="text-xl font-black">2 x $30.000</span>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-2 pt-1">
-              <button onclick="addToCart('ChocoWeed (1 Unidad)', 18000)" class="bg-white hover:bg-stone-100 text-bruma-greenDark border-2 border-bruma-greenDark font-black text-xs py-3 px-2 rounded-xl transition active:scale-95 flex items-center justify-center gap-1 cursor-pointer min-h-[44px]">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
-                <span>1 Ud ($18K)</span>
-              </button>
-              <button onclick="addToCart('Promo 2x ChocoWeed', 30000)" class="bg-bruma-greenDark hover:bg-stone-900 text-bruma-cream font-black text-xs py-3 px-2 rounded-xl shadow-md transition active:scale-95 flex items-center justify-center gap-1 cursor-pointer min-h-[44px]">
-                <span>🔥 2x $30K</span>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- ============================================== -->
-        <!-- 2. CHOCO HALLOWEED (EDICIÓN ESPECIAL)          -->
-        <!-- ============================================== -->
-        <article class="relative bg-white rounded-3xl border-4 border-bruma-orange shadow-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_30px_rgba(255,107,0,0.25)]">
-          <div class="giant-b-backdrop text-bruma-orange">B</div>
-
-          <div>
-            <!-- Header Card Tags -->
-            <div class="relative z-10 flex justify-between items-center px-4 pt-4">
-              <span class="bg-stone-950 text-orange-400 text-xs font-black uppercase px-3 py-1 rounded-full shadow flex items-center gap-1">
-                <span>🎃</span> Edición Especial
-              </span>
-              <span class="bg-bruma-orange text-stone-950 text-xs font-black uppercase px-3 py-1 rounded-full shadow-md">
-                🔥 2 x $35K
-              </span>
-            </div>
-
-            <!-- Foto Galleta -->
-            <div class="relative z-10 p-4">
-              <div class="aspect-square w-full rounded-2xl overflow-hidden border-2 border-bruma-orange/40 shadow-inner bg-stone-900 group">
-                <img src="assets/cookies/halloweed.jpg" 
-                     alt="Choco HalloWeed — Cacao oscuro y centro cremoso" 
-                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                     loading="lazy"
-                     onerror="this.src='https://i.postimg.cc/mks6DPMm/Gemini-Generated-Image-vm7f11vm7f11vm7f.jpg'">
-              </div>
-            </div>
-
-            <!-- Información -->
-            <div class="relative z-10 px-5 pb-4">
-              <h3 class="font-display text-2xl font-black text-stone-950 uppercase leading-tight">
-                Choco HalloWeed
-              </h3>
-              <p class="text-xs font-bold text-bruma-orange uppercase tracking-wider mb-2">
-                Cacao Oscuro & Relleno Lava
-              </p>
-              <p class="text-xs sm:text-sm text-stone-700 font-medium leading-relaxed">
-                Masa oscura de cacao intenso con trozos crujientes de galleta negra, toques festivos de temporada y centro cremoso fundido estilo lava.
-              </p>
-            </div>
-          </div>
-
-          <!-- Bloque Precios & Acciones -->
-          <div class="relative z-10 bg-orange-50/80 border-t-2 border-bruma-orange/30 p-5 space-y-3">
-            <div class="flex justify-between items-center">
-              <div>
-                <span class="text-[11px] font-bold uppercase text-stone-500 block">1 Unidad</span>
-                <span class="text-xl font-black text-stone-900">$20.000</span>
-              </div>
-              <div class="text-right bg-stone-950 text-white px-3 py-1.5 rounded-xl border border-bruma-orange/60 shadow-sm">
-                <span class="text-[10px] font-bold uppercase block text-orange-400">Promo Dúo</span>
-                <span class="text-xl font-black">2 x $35.000</span>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-2 pt-1">
-              <button onclick="addToCart('Choco HalloWeed (1 Unidad)', 20000)" class="bg-white hover:bg-orange-100 text-stone-950 border-2 border-stone-950 font-black text-xs py-3 px-2 rounded-xl transition active:scale-95 flex items-center justify-center gap-1 cursor-pointer min-h-[44px]">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
-                <span>1 Ud ($20K)</span>
-              </button>
-              <button onclick="addToCart('Promo 2x Choco HalloWeed', 35000)" class="bg-bruma-orange hover:bg-orange-500 text-stone-950 font-black text-xs py-3 px-2 rounded-xl shadow-md transition active:scale-95 flex items-center justify-center gap-1 cursor-pointer min-h-[44px]">
-                <span>🎃 2x $35K</span>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- ============================================== -->
-        <!-- 3. RED VELVET                                 -->
-        <!-- ============================================== -->
-        <article class="relative bg-white rounded-3xl border-4 border-bruma-ruby shadow-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_30px_rgba(158,27,36,0.25)]">
-          <div class="giant-b-backdrop text-bruma-ruby">B</div>
-
-          <div>
-            <!-- Header Card Tags -->
-            <div class="relative z-10 flex justify-between items-center px-4 pt-4">
-              <span class="bg-bruma-ruby text-white text-xs font-black uppercase px-3 py-1 rounded-full shadow">
-                👑 Selección Gourmet
-              </span>
-              <span class="bg-bruma-gold text-stone-950 text-xs font-black uppercase px-3 py-1 rounded-full shadow-md">
-                🔥 2 x $38K
-              </span>
-            </div>
-
-            <!-- Foto Galleta -->
-            <div class="relative z-10 p-4">
-              <div class="aspect-square w-full rounded-2xl overflow-hidden border-2 border-bruma-ruby/30 shadow-inner bg-stone-900 group">
-                <img src="assets/cookies/redvelvet.jpg" 
-                     alt="Red Velvet Bruma Savia — Corazón cremoso" 
-                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                     loading="lazy"
-                     onerror="this.src='https://i.postimg.cc/nrJwzX7d/Gemini-Generated-Image-luwc19luwc19luwc.jpg'">
-              </div>
-            </div>
-
-            <!-- Información -->
-            <div class="relative z-10 px-5 pb-4">
-              <h3 class="font-display text-2xl font-black text-bruma-ruby uppercase leading-tight">
-                Red Velvet
-              </h3>
-              <p class="text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">
-                Masa Roja Aterciopelada & Centro Cremoso
-              </p>
-              <p class="text-xs sm:text-sm text-stone-700 font-medium leading-relaxed">
-                Textura suave estilo terciopelo rojo con un sutil toque de cacao, chispas selectas y un corazón suave que se funde en el paladar.
-              </p>
-            </div>
-          </div>
-
-          <!-- Bloque Precios & Acciones -->
-          <div class="relative z-10 bg-red-50/80 border-t-2 border-bruma-ruby/20 p-5 space-y-3">
-            <div class="flex justify-between items-center">
-              <div>
-                <span class="text-[11px] font-bold uppercase text-stone-500 block">1 Unidad</span>
-                <span class="text-xl font-black text-bruma-ruby">$22.000</span>
-              </div>
-              <div class="text-right bg-bruma-ruby text-white px-3 py-1.5 rounded-xl shadow-sm">
-                <span class="text-[10px] font-bold uppercase block text-bruma-cream">Promo Dúo</span>
-                <span class="text-xl font-black">2 x $38.000</span>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-2 pt-1">
-              <button onclick="addToCart('Red Velvet (1 Unidad)', 22000)" class="bg-white hover:bg-red-100 text-bruma-ruby border-2 border-bruma-ruby font-black text-xs py-3 px-2 rounded-xl transition active:scale-95 flex items-center justify-center gap-1 cursor-pointer min-h-[44px]">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
-                <span>1 Ud ($22K)</span>
-              </button>
-              <button onclick="addToCart('Promo 2x Red Velvet', 38000)" class="bg-bruma-ruby hover:bg-red-900 text-white font-black text-xs py-3 px-2 rounded-xl shadow-md transition active:scale-95 flex items-center justify-center gap-1 cursor-pointer min-h-[44px]">
-                <span>👑 2x $38K</span>
-              </button>
-            </div>
-          </div>
-        </article>
-
+      <!-- Grid de Galletas Dinámico -->
+      <div id="cookiesGrid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Renderizado dinámicamente con soporte Google Sheets y fallback local -->
       </div>
 
       <!-- ============================================== -->
@@ -719,7 +523,218 @@
     // WhatsApp Oficial Configurado
     const WHATSAPP_NUMBER = "573015356917";
 
+    // URL de Google Sheets publicada como CSV (puedes cambiarla cuando publiques tu propia hoja)
+    // Dejamos configurado el inventario inicial con tus 65 galletas
+    const GOOGLE_SHEET_CSV_URL = "";
+
+    // Catálogo base con tu stock exacto (65 galletas horneadas)
+    let cookiesData = [
+      {
+        id: "chocoweed",
+        name: "ChocoWeed",
+        category: "Chips de Chocolate Semi-Amargo",
+        description: "La especialidad clásica de la casa. Masa dorada horneada con mantequilla pura de campo y abundantes trozos de chocolate oscuro fundido.",
+        priceUnit: 18000,
+        promoText: "2 x $30K",
+        promoPrice: 30000,
+        badge: "Línea 1 • Clásica",
+        borderColor: "border-bruma-greenDark",
+        badgeBg: "bg-bruma-greenDark",
+        badgeText: "text-bruma-cream",
+        accentBg: "bg-[#FFF7E3]",
+        accentText: "text-bruma-greenDark",
+        buttonBorder: "border-bruma-greenDark",
+        image: "assets/cookies/chocoweed.jpg",
+        fallbackImage: "https://i.postimg.cc/wT9GYs91/Gemini-Generated-Image-dhqvuodhqvuodhqv.jpg",
+        stock: 36,
+        active: true
+      },
+      {
+        id: "halloweed",
+        name: "Choco HalloWeed",
+        category: "Cacao Oscuro & Relleno Lava",
+        description: "Masa oscura de cacao intenso con trozos crujientes de galleta negra, toques festivos de temporada y centro cremoso fundido estilo lava.",
+        priceUnit: 20000,
+        promoText: "2 x $35K",
+        promoPrice: 35000,
+        badge: "🎃 Edición Especial",
+        borderColor: "border-bruma-orange",
+        badgeBg: "bg-stone-950",
+        badgeText: "text-orange-400",
+        accentBg: "bg-orange-50/80",
+        accentText: "text-stone-900",
+        buttonBorder: "border-stone-950",
+        image: "assets/cookies/halloweed.jpg",
+        fallbackImage: "https://i.postimg.cc/mks6DPMm/Gemini-Generated-Image-vm7f11vm7f11vm7f.jpg",
+        stock: 19,
+        active: true
+      },
+      {
+        id: "redvelvet",
+        name: "Red Velvet",
+        category: "Masa Roja Aterciopelada & Centro Cremoso",
+        description: "Textura suave estilo terciopelo rojo con un sutil toque de cacao, chispas selectas y un corazón suave que se funde en el paladar.",
+        priceUnit: 22000,
+        promoText: "2 x $38K",
+        promoPrice: 38000,
+        badge: "👑 Selección Gourmet",
+        borderColor: "border-bruma-ruby",
+        badgeBg: "bg-bruma-ruby",
+        badgeText: "text-white",
+        accentBg: "bg-red-50/80",
+        accentText: "text-bruma-ruby",
+        buttonBorder: "border-bruma-ruby",
+        image: "assets/cookies/redvelvet.jpg",
+        fallbackImage: "https://i.postimg.cc/nrJwzX7d/Gemini-Generated-Image-luwc19luwc19luwc.jpg",
+        stock: 10,
+        active: true
+      }
+    ];
+
     let cart = [];
+
+    // Renderizar tarjetas de galletas con stock en tiempo real
+    function renderCookiesGrid() {
+      const grid = document.getElementById('cookiesGrid');
+      if (!grid) return;
+
+      let totalStock = 0;
+      grid.innerHTML = cookiesData.filter(c => c.active).map(cookie => {
+        totalStock += (cookie.stock || 0);
+        const isOutOfStock = cookie.stock <= 0;
+
+        return `
+        <article class="relative bg-white rounded-3xl border-4 ${cookie.borderColor} shadow-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+          <div class="giant-b-backdrop opacity-10">B</div>
+
+          <div>
+            <div class="relative z-10 flex justify-between items-center px-4 pt-4">
+              <span class="${cookie.badgeBg} ${cookie.badgeText} text-xs font-black uppercase px-3 py-1 rounded-full shadow">
+                ${cookie.badge}
+              </span>
+              <span class="bg-bruma-gold text-stone-950 text-xs font-black uppercase px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+                <svg class="w-3.5 h-3.5 text-stone-950" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.316.492-.59 1.05-.845 1.62-.51 1.139-.904 2.37-1.19 3.513a.998.998 0 01-.734.733c-.783.196-1.554.492-2.308.882a1 1 0 00-.503 1.144c.433 1.62 1.488 2.87 2.822 3.65.263.153.535.291.815.412a1 1 0 01.597.943c-.017.55.076 1.11.282 1.637.28.718.742 1.34 1.334 1.802a1 1 0 001.57-.45 8.904 8.904 0 00.32-1.748c.046-.576.22-1.13.513-1.62a1 1 0 01.9-.49c.813.06 1.626-.063 2.383-.37a1 1 0 00.612-.876c-.035-1.542-.71-2.997-1.874-4.004-.377-.327-.8-.604-1.258-.821a1 1 0 01-.58-.962c.047-.796.26-1.58.633-2.296.257-.492.592-.937.994-1.317a1 1 0 00-.188-1.589z" clip-rule="evenodd"/></svg>
+                <span>${cookie.promoText}</span>
+              </span>
+            </div>
+
+            <div class="relative z-10 p-4">
+              <div class="aspect-square w-full rounded-2xl overflow-hidden border-2 border-stone-200 shadow-inner bg-stone-900 group">
+                <img src="${cookie.image}" 
+                     alt="${cookie.name} — Bruma Savia" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                     loading="lazy"
+                     onerror="this.src='${cookie.fallbackImage}'">
+              </div>
+            </div>
+
+            <div class="relative z-10 px-5 pb-4">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <h3 class="font-display text-2xl font-black ${cookie.accentText} uppercase leading-tight">
+                  ${cookie.name}
+                </h3>
+                <span class="inline-flex items-center gap-1 text-[11px] font-black px-2.5 py-1 rounded-full ${isOutOfStock ? 'bg-red-100 text-red-700' : 'bg-emerald-100 text-emerald-800'}">
+                  <span class="w-1.5 h-1.5 rounded-full ${isOutOfStock ? 'bg-red-500' : 'bg-emerald-500'}"></span>
+                  <span>${isOutOfStock ? 'Agotado' : cookie.stock + ' disp.'}</span>
+                </span>
+              </div>
+              <p class="text-xs font-bold text-stone-600 uppercase tracking-wider mb-2">
+                ${cookie.category}
+              </p>
+              <p class="text-xs sm:text-sm text-stone-700 font-medium leading-relaxed">
+                ${cookie.description}
+              </p>
+            </div>
+          </div>
+
+          <div class="relative z-10 ${cookie.accentBg} border-t-2 border-stone-200/80 p-5 space-y-3">
+            <div class="flex justify-between items-center">
+              <div>
+                <span class="text-[11px] font-bold uppercase text-stone-500 block">1 Unidad</span>
+                <span class="text-xl font-black ${cookie.accentText}">${formatCOP(cookie.priceUnit)}</span>
+              </div>
+              <div class="text-right bg-stone-950 text-white px-3 py-1.5 rounded-xl shadow-sm">
+                <span class="text-[10px] font-bold uppercase block text-bruma-gold">Promo Dúo</span>
+                <span class="text-xl font-black">${formatCOP(cookie.promoPrice)}</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <button onclick="addToCart('${cookie.name} (1 Unidad)', ${cookie.priceUnit})" 
+                      ${isOutOfStock ? 'disabled' : ''}
+                      class="bg-white hover:bg-stone-100 text-stone-900 border-2 ${cookie.buttonBorder} font-black text-xs py-3 px-2 rounded-xl transition active:scale-95 flex items-center justify-center gap-1 cursor-pointer min-h-[44px] ${isOutOfStock ? 'opacity-50 cursor-not-allowed' : ''}">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+                <span>1 Ud (${formatCOP(cookie.priceUnit / 1000)}K)</span>
+              </button>
+              <button onclick="addToCart('Promo 2x ${cookie.name}', ${cookie.promoPrice})" 
+                      ${isOutOfStock ? 'disabled' : ''}
+                      class="bg-stone-950 hover:bg-stone-800 text-bruma-cream font-black text-xs py-3 px-2 rounded-xl shadow-md transition active:scale-95 flex items-center justify-center gap-1 cursor-pointer min-h-[44px] ${isOutOfStock ? 'opacity-50 cursor-not-allowed' : ''}">
+                <span>🔥 2x ${formatCOP(cookie.promoPrice / 1000)}K</span>
+              </button>
+            </div>
+          </div>
+        </article>
+        `;
+      }).join('');
+
+      const counter = document.getElementById('totalStockCounter');
+      if (counter) {
+        counter.textContent = `${totalStock} galletas horneadas`;
+      }
+    }
+
+    // Cargar inventario en vivo desde Google Sheets (si está configurada la URL)
+    async function fetchInventoryFromGoogleSheets() {
+      if (!GOOGLE_SHEET_CSV_URL) {
+        renderCookiesGrid();
+        return;
+      }
+      try {
+        const response = await fetch(GOOGLE_SHEET_CSV_URL);
+        const csvText = await response.text();
+        const rows = csvText.split('\n').map(r => r.split(','));
+        const headers = rows[0].map(h => h.trim().toLowerCase());
+        
+        // Parsear filas del Sheet
+        const parsed = [];
+        for (let i = 1; i < rows.length; i++) {
+          const row = rows[i];
+          if (!row || row.length < 3) continue;
+          const item = {};
+          headers.forEach((h, idx) => {
+            item[h] = row[idx] ? row[idx].trim().replace(/^"|"$/g, '') : '';
+          });
+          if (item.id && (item.activo === 'SI' || item.activo === 'true' || item.activo === '1')) {
+            parsed.push({
+              id: item.id,
+              name: item.nombre || item.id,
+              category: item.categoria || '',
+              description: item.descripcion || '',
+              priceUnit: parseInt(item.precio_unidad) || 18000,
+              promoText: item.promo_texto || '2 x Promo',
+              promoPrice: parseInt(item.promo_precio) || 30000,
+              badge: item.badge || 'Gourmet',
+              image: item.imagen_url || 'assets/cookies/chocoweed.jpg',
+              fallbackImage: item.imagen_url || '',
+              stock: parseInt(item.stock) || 0,
+              active: true,
+              borderColor: item.border_color || 'border-bruma-greenDark',
+              badgeBg: item.badge_bg || 'bg-bruma-greenDark',
+              badgeText: item.badge_text || 'text-bruma-cream',
+              accentBg: item.accent_bg || 'bg-[#FFF7E3]',
+              accentText: item.accent_text || 'text-bruma-greenDark',
+              buttonBorder: item.button_border || 'border-bruma-greenDark'
+            });
+          }
+        }
+        if (parsed.length > 0) {
+          cookiesData = parsed;
+        }
+      } catch (err) {
+        console.warn("Usando inventario local de respaldo:", err);
+      }
+      renderCookiesGrid();
+    }
 
     // Formateador de moneda en Pesos Colombianos (COP)
     function formatCOP(amount) {
@@ -746,8 +761,9 @@
       }, 10);
     }
 
-    // Comprobar si ya aceptó previamente para no bloquear innecesariamente
+    // Comprobar si ya aceptó previamente e inicializar inventario
     document.addEventListener('DOMContentLoaded', () => {
+      fetchInventoryFromGoogleSheets();
       try {
         if (localStorage.getItem('bruma_norms_accepted') === 'true') {
           const modal = document.getElementById('ageModal');
