@@ -682,7 +682,36 @@
       }
     }
 
-    // Cargar inventario en vivo desde Google Sheets (si está configurada la URL)
+    // Función parser de CSV estándar que soporta comas y saltos dentro de comillas
+    function parseCSV(text) {
+      const lines = text.trim().split(/\r?\n/);
+      const result = [];
+      for (let line of lines) {
+        if (!line.trim()) continue;
+        const row = [];
+        let inQuotes = false;
+        let current = '';
+        for (let i = 0; i < line.length; i++) {
+          const char = line[i];
+          if (char === '"' && line[i + 1] === '"') {
+            current += '"';
+            i++;
+          } else if (char === '"') {
+            inQuotes = !inQuotes;
+          } else if (char === ',' && !inQuotes) {
+            row.push(current.trim());
+            current = '';
+          } else {
+            current += char;
+          }
+        }
+        row.push(current.trim());
+        result.push(row);
+      }
+      return result;
+    }
+
+    // Cargar inventario en vivo desde Google Sheets
     async function fetchInventoryFromGoogleSheets() {
       if (!GOOGLE_SHEET_CSV_URL) {
         renderCookiesGrid();
@@ -691,7 +720,12 @@
       try {
         const response = await fetch(GOOGLE_SHEET_CSV_URL);
         const csvText = await response.text();
-        const rows = csvText.split('\n').map(r => r.split(','));
+        const rows = parseCSV(csvText);
+        if (!rows || rows.length < 2) {
+          renderCookiesGrid();
+          return;
+        }
+
         const headers = rows[0].map(h => h.trim().toLowerCase());
         
         // Parsear filas del Sheet
@@ -703,7 +737,32 @@
           headers.forEach((h, idx) => {
             item[h] = row[idx] ? row[idx].trim().replace(/^"|"$/g, '') : '';
           });
-          if (item.id && (item.activo === 'SI' || item.activo === 'true' || item.activo === '1')) {
+
+          // Configuración de estilo visual según el id o fila
+          let borderColor = "border-bruma-greenDark";
+          let badgeBg = "bg-bruma-greenDark";
+          let badgeText = "text-bruma-cream";
+          let accentBg = "bg-[#FFF7E3]";
+          let accentText = "text-bruma-greenDark";
+          let buttonBorder = "border-bruma-greenDark";
+
+          if (item.id === "halloweed" || (item.nombre && item.nombre.toLowerCase().includes("hallo"))) {
+            borderColor = "border-bruma-orange";
+            badgeBg = "bg-stone-950";
+            badgeText = "text-orange-400";
+            accentBg = "bg-orange-50/80";
+            accentText = "text-stone-900";
+            buttonBorder = "border-stone-950";
+          } else if (item.id === "redvelvet" || (item.nombre && item.nombre.toLowerCase().includes("velvet"))) {
+            borderColor = "border-bruma-ruby";
+            badgeBg = "bg-bruma-ruby";
+            badgeText = "text-white";
+            accentBg = "bg-red-50/80";
+            accentText = "text-bruma-ruby";
+            buttonBorder = "border-bruma-ruby";
+          }
+
+          if (item.id && (item.activo === 'SI' || item.activo === 'si' || item.activo === 'true' || item.activo === '1' || !item.activo)) {
             parsed.push({
               id: item.id,
               name: item.nombre || item.id,
@@ -717,12 +776,12 @@
               fallbackImage: item.imagen_url || '',
               stock: parseInt(item.stock) || 0,
               active: true,
-              borderColor: item.border_color || 'border-bruma-greenDark',
-              badgeBg: item.badge_bg || 'bg-bruma-greenDark',
-              badgeText: item.badge_text || 'text-bruma-cream',
-              accentBg: item.accent_bg || 'bg-[#FFF7E3]',
-              accentText: item.accent_text || 'text-bruma-greenDark',
-              buttonBorder: item.button_border || 'border-bruma-greenDark'
+              borderColor: borderColor,
+              badgeBg: badgeBg,
+              badgeText: badgeText,
+              accentBg: accentBg,
+              accentText: accentText,
+              buttonBorder: buttonBorder
             });
           }
         }
