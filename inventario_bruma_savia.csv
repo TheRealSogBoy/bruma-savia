@@ -1,0 +1,4 @@
+id,nombre,categoria,precio_unidad,promo_texto,promo_precio,descripcion,badge,imagen_url,stock,activo
+chocoweed,ChocoWeed,Chips de Chocolate Semi-Amargo,18000,2 x $30K,30000,"La especialidad clásica de la casa. Masa dorada horneada con mantequilla pura de campo y abundantes trozos de chocolate oscuro fundido.",Línea 1 • Clásica,assets/cookies/chocoweed.jpg,36,SI
+halloweed,Choco HalloWeed,Cacao Oscuro & Relleno Lava,20000,2 x $35K,35000,"Masa oscura de cacao intenso con trozos crujientes de galleta negra, toques festivos de temporada y centro cremoso fundido estilo lava.",🎃 Edición Especial,assets/cookies/halloweed.jpg,19,SI
+redvelvet,Red Velvet,Masa Roja Aterciopelada & Centro Cremoso,22000,2 x $38K,38000,"Textura suave estilo terciopelo rojo con un sutil toque de cacao, chispas selectas y un corazón suave que se funde en el paladar.",👑 Selección Gourmet,assets/cookies/redvelvet.jpg,10,SI
